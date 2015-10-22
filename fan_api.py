@@ -8,13 +8,13 @@ fan = Fan()
 
 @route("/fan/turn_on")
 def turn_on():
-	fan.set_status(Fan.ON)
+	fan.set_state(Fan.ON)
 	return json.dumps({"status": "OK"})
 
 
 @route("/fan/turn_off")
 def turn_off():
-	fan.set_status(Fan.OFF)
+	fan.set_state(Fan.OFF)
 	return json.dumps({"status": "OK"})
 
 

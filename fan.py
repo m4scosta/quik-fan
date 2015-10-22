@@ -15,10 +15,12 @@ class Fan(object):
 		super(Fan, self).__init__()
 
 		self.board = pingo.rpi.RaspberryPi()
-		self.state_pin = self.board[7]
+		self.state_pin = self.board.pins[13]
 
-	def set_status(self, status):
+		self.set_state(Fan.OFF)
+
+	def set_state(self, status):
 		if status == Fan.ON:
-			self.state_pin.high()
+			self.state_pin.lo()
 		elif status == Fan.OFF:
-			self.state_pin.low()
+			self.state_pin.hi()
