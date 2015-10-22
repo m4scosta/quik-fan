@@ -16,6 +16,7 @@ class Fan(object):
 
 		self.board = pingo.rpi.RaspberryPi()
 		self.state_pin = self.board.pins[13]
+		self.state_pin.mode = pingo.OUT
 
 		self.set_state(Fan.OFF)
 
